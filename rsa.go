@@ -23,6 +23,10 @@ func (rsas *RSASecurity) SetPublicKey(pubStr string) (err error) {
 	return err
 }
 
+func (rsas *RSASecurity) SetPublicKeyV2(pub *rsa.PublicKey) {
+	rsas.pubkey = pub
+}
+
 // 设置私钥
 func (rsas *RSASecurity) SetPrivateKey(priStr string) (err error) {
 	rsas.priStr = priStr
