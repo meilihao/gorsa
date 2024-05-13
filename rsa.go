@@ -34,6 +34,10 @@ func (rsas *RSASecurity) SetPrivateKey(priStr string) (err error) {
 	return err
 }
 
+func (rsas *RSASecurity) SetPrivateKeyV2(pri *rsa.PrivateKey) {
+	rsas.prikey = pri
+}
+
 // *rsa.PublicKey
 func (rsas *RSASecurity) GetPrivatekey() (*rsa.PrivateKey, error) {
 	return getPriKey([]byte(rsas.priStr))
